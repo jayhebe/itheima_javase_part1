@@ -14,7 +14,7 @@ public class GirlFriend {
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public void setName(String name) {
@@ -22,7 +22,15 @@ public class GirlFriend {
     }
 
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getGender() {
+        return this.gender;
     }
 
     public void sleep() {
