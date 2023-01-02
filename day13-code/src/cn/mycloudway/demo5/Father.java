@@ -1,8 +1,8 @@
 package cn.mycloudway.demo5;
 
 public class Father {
-    private String name;
-    private String gender;
+    String name;
+    String gender;
 
     public Father() {
     }
