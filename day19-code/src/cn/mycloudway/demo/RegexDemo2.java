@@ -1,6 +1,6 @@
-package cn.mycloudway.test;
+package cn.mycloudway.demo;
 
-public class RegexTest1 {
+public class RegexDemo2 {
     public static void main(String[] args) {
         String mobileRegex = "1[3-9]\\d{9}";
 
