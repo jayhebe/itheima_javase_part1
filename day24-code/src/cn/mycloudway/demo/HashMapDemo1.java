@@ -3,7 +3,7 @@ package cn.mycloudway.demo;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapDemo1 {
+public class HashMapDemo1 {
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<>();
 
