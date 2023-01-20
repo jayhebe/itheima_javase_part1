@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class MapTest2 {
+public class HashMapTest2 {
     public static void main(String[] args) {
         Map<String, Integer> result = new HashMap<>();
         String[] choices = {"A", "B", "C", "D"};
