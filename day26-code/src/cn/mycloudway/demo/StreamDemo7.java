@@ -20,5 +20,10 @@ public class StreamDemo7 {
 
         Stream.concat(list1.stream(), list2.stream())
                 .forEach(name -> System.out.println(name));
+
+        System.out.println("-------------------------------------");
+
+        list1.addAll(list2);
+        list1.forEach(name -> System.out.println(name));
     }
 }
