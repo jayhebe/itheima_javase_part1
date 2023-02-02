@@ -1,9 +1,6 @@
 package cn.mycloudway.test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -37,17 +34,15 @@ public class CodeCounter {
 
     public static HashMap<String, Integer> countCodeLines(ArrayList<File> files) {
         int sum = 0;
-        FileInputStream fis = null;
+        BufferedReader br = null;
         HashMap<String, Integer> result = new HashMap<>();
 
         for (File file : files) {
             try {
-                fis = new FileInputStream(file);
+                br = new BufferedReader(new FileReader(file));
 
-                while (fis.available() != 0) {
-                    if ((char) fis.read() == '\r' && (char) fis.read() == '\n') {
-                        sum++;
-                    }
+                while (br.readLine() != null) {
+                    sum++;
                 }
             } catch (FileNotFoundException e) {
                 System.out.println("文件" + file + "未找到");
@@ -55,7 +50,7 @@ public class CodeCounter {
                 System.out.println("文件" + file + "读取错误");
             } finally {
                 try {
-                    fis.close();
+                    br.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
