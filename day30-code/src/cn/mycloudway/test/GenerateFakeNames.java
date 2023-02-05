@@ -1,5 +1,7 @@
 package cn.mycloudway.test;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -45,11 +47,20 @@ public class GenerateFakeNames {
             Collections.addAll(girlNameList, girlNames);
         }
 
-        HashSet<String> boyNames = getBoyNames(familyNameList, boyNameList, 50);
-        HashSet<String> girlNames = getGirlNames(familyNameList, girlNameList, 50);
+        HashSet<String> boyNames = getBoyNames(familyNameList, boyNameList, 60);
+        HashSet<String> girlNames = getGirlNames(familyNameList, girlNameList, 60);
 
-        System.out.println(boyNames);
-        System.out.println(girlNames);
+        BufferedWriter bw = new BufferedWriter(new FileWriter("day30-code/names.txt"));
+        for (String name : boyNames) {
+            bw.write(name);
+            bw.newLine();
+        }
+        for (String name : girlNames) {
+            bw.write(name);
+            bw.newLine();
+        }
+
+        bw.close();
     }
 
     public static String webCrawler(String urlAddress) throws IOException {
