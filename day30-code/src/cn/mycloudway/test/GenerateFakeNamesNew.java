@@ -1,10 +1,9 @@
 package cn.mycloudway.test;
 
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.ReUtil;
 import cn.hutool.http.HttpUtil;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -45,17 +44,8 @@ public class GenerateFakeNamesNew {
         HashSet<String> boyNames = getBoyNames(familyNameList, boyNameList, 60);
         HashSet<String> girlNames = getGirlNames(familyNameList, girlNameList, 60);
 
-        BufferedWriter bw = new BufferedWriter(new FileWriter("day30-code/newNames.txt"));
-        for (String name : boyNames) {
-            bw.write(name);
-            bw.newLine();
-        }
-        for (String name : girlNames) {
-            bw.write(name);
-            bw.newLine();
-        }
-
-        bw.close();
+        FileUtil.writeLines(boyNames, "../../../day30-code/newNames.txt", "UTF8");
+        FileUtil.writeLines(girlNames, "../../../day30-code/newNames.txt", "UTF8", true);
     }
 
     public static HashSet<String> getBoyNames(ArrayList<String> familyNameList, ArrayList<String> boyNameList, int count) {
